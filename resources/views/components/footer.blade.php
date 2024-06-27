@@ -1,40 +1,53 @@
 
 
-<div class="bg-gray-900 py-8">
-    
+<div id="contacts" class="bg-gray-900 py-8">
     <div class="max-w-7xl mx-auto lg:flex px-5 gap-12" >
 
         <div class="w-full lg:w-1/2 text-white mb-12 lg:mb-0">
             <h1 class="text-2xl font-bold mb-2">Contacts</h1>
             <hr class="border-white border-b">
 
-            <div class="flex items-center gap-4 text-xl my-3 text-gray-300">
+            <div class="flex items-center gap-4 my-3 text-gray-300">
                 <span class="material-symbols-outlined">
                     mail
                 </span>
-                <span>chalnicol@gmail.com</span>
+                <span>{{ $data['profile']['details']['email'] }}</span>
             </div>
-            <div class="flex items-center gap-4 text-xl my-3 text-gray-300">
+
+            <div class="flex items-center gap-4 my-3 text-gray-300">
                 <span class="material-symbols-outlined">
-                    globe_asia
+                    globe
                 </span>
-                <span>charlounicolas.tech</span>
+                <span>{{ $data['profile']['details']['website'] }}</span>
+
             </div>
-            <div class="flex items-center gap-4 text-xl my-3 text-gray-300">
+            <div class="flex items-center gap-4 my-3 text-gray-300">
                 <span class="material-symbols-outlined">
                     smartphone
                 </span>
-                <span>(+63) 9694547951</span>
+                <span>{{ $data['profile']['details']['phone'] }}</span>
+
             </div>
-            <div class="flex items-center gap-4 text-xl my-3 text-gray-300">
+            <div class="flex items-center gap-4 my-3 text-gray-300">
                 <span class="material-symbols-outlined">
                     home
                 </span>
-                <span>Sacred Heart Village, Caloocan City PH 1400</span>
+                <span>{{ $data['profile']['details']['address'] }}</span>
+
             </div>
 
             <h1 class="text-2xl font-bold mb-2 mt-12">Socials</h1>
             <hr class="border-white border-b">
+            <div class="flex gap-4 mt-4 px-0">
+
+                @foreach($data['profile']['details']['socials'] as $key => $social )
+                <div class="h-8 w-8 overflow-hidden shadow-lg z-auto">
+                    <a href="{{ $social['url'] }}">
+                        <img class="w-full h-full" src="{{ asset('assets/images/socials/'. $social['thumbnail'] ) }}" alt="{{  $social['name']}}">
+                    </a>
+                </div>
+                @endforeach
+            </div>
 
         </div>
 
@@ -42,23 +55,25 @@
             <h1 class="text-2xl font-bold mb-2">Leave A Message</h1>
             <hr class="border-white border-b">
 
-            <form action="">
-                
-                <div class="my-3">
-                    <label for="name">Name</label><br>
-                    <input type="text" name="name" id="name" class="w-full h-10 rounded my-1 px-3 text-black" placeholder="Enter your name">
+            <form action="{{ route('send.message') }}" method="POST">
+
+               @csrf
+                <div class="my-2">
+                    {{-- <label for="name">Name</label><br> --}}
+                    <input type="text" name="name" id="name" class="w-full h-10 rounded my-1 px-3 text-black" placeholder="Enter your name" required>
                 </div>
-                <div class="my-3">
-                    <label for="email">Email</label><br>
-                    <input type="text" name="email" id="email" class="w-full h-10 rounded my-1 px-3 text-black" placeholder="Enter your e-mail">
+                <div class="my-2">
+                    {{-- <label for="email">Email</label><br> --}}
+                    <input type="text" name="email" id="email" class="w-full h-10 rounded my-1 px-3 text-black" placeholder="Enter your e-mail" required>
                 </div>
-                <div class="my-3">
-                    <label for="body">Message</label><br>
-                    <textarea name="body" id="body" class="w-full h-32 rounded my-1 p-3 text-black" placeholder="Enter message here"></textarea>
+                <div class="my-2">
+                    {{-- <label for="message">Message</label><br> --}}
+                    <textarea name="message" id="message" class="w-full h-32 rounded my-1 p-3 text-black" placeholder="Enter message here" required></textarea>
                 </div>
-                <button class="w-full bg-green-500 py-3 rounded-md text-xl font-bold hover:bg-green-400">SEND</button>
+                <button type="submit" class="w-full bg-gray-500 py-3 rounded-md text-xl font-bold hover:bg-gray-400">SEND</button>
             </form>
 
+            <br><br>
         </div>
 
     </div>

@@ -5,10 +5,20 @@
 
 @section('content')
 
-    <x-about-me />
-    
+    @include('components.about')
+
+    @include('components.recentWork')
+
+    @include('components.skills')
+
+    @include('components.workExperience')
+
 @endsection
 
 @section('scripts')
-    {{-- <script src="{{ asset('js/contact.js') }}"></script> --}}
+
+    <script src="{{ asset('assets/js/nav.js')}}"></script>
+
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+    
 @endsection
