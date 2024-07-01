@@ -2,9 +2,11 @@
 <div id="experience" class="bg-gray-200 md:px-0 px-3 pb-[100px] w-full min-h-[calc(100vh-4rem)]">
 
 
-    <h1 class="lg:text-4xl py-6 text-center font-bold">Work Experience</h1>
+
 
     <div class="w-11/12 max-w-3xl flex flex-col items-center justify-center mx-auto">
+
+        <h1 class="lg:text-4xl pb-6 mt-12 text-center font-bold">Work Experience</h1>
 
         @foreach($data['profile']['workExperience'] as $key => $recentWork)
 
@@ -28,7 +30,7 @@
                     <div class="w-circ absolute w-4 h-4 bg-black start-1 origin-center rounded-full top-1/2 translate-x-[-50%] translate-y-[-50%]"></div>
                 </div>
                 <div class="grow py-2 z-20">
-                    <div class="scale-0 w-card bg-white border border-black rounded-lg overflow-hidden shadow-lg">
+                    <div class="w-card scale-0 bg-white border border-black rounded-lg overflow-hidden shadow-lg">
                         
                         <div class=" bg-gray-800 text-sm text-white p-3">
                             {{ $recentWork['start'] . ' - ' . $recentWork['end']}}

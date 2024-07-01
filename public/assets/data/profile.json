@@ -31,7 +31,7 @@
                 {
                     "name" : "github",
                     "thumbnail" : "github.png",
-                    "url" : "https://github.com/chaln"
+                    "url" : "https://github.com/chalnicol/"
                 },
                 {
                     "name" : "linkedin",
@@ -58,68 +58,72 @@
         "recentWorks" : [
             {
                 "title" : "Salpakan",
+                "type" : "web",
                 "description" : "HTML5 game",
                 "url" : "https://salpakan2021.onrender.com/",
                 "image" : "salpakan.png"
             },
             {
                 "title" : "Solitaire",
+                "type" : "web",
                 "description" : "HTML5 game",
-                "url" : "https://charlounicolas.tech/projects/solitaire/",
+                "url" : "solitaire/index.html",
                 "image" : "solitaire.jpg"
 
             },
             {
                 "title" : "Block Puzzle",
+                "type" : "mobile",
                 "description" : "HTML5 game",
-                "url" : "https://charlounicolas.tech/projects/blockpuzzle/",
+                "url" : "blockpuzzle/index.html",
                 "image" : "blockpuzzle.png"
 
             },
             {
                 "title" : "Connect 4",
+                "type" : "web",
                 "description" : "HTML5 game",
                 "url" : "https://connectfour2020.onrender.com/",
                 "image" : "connect4.png"
 
             },
             {
-                "title" : "Solitaire",
-                "description" : "HTML5 game",
-                "url" : "https://charlounicolas.tech/projects/solitaire/",
-                "image" : "solitaire.jpg"
+                "title" : "Sushis' Recital",
+                "type" : "web",
+                "description" : "3D Animation w/ ThreeJS",
+                "url" : "animationchallenge2023/index.html",
+                "image" : "sushi.jpg"
 
             },
             {
-                "title" : "Block Puzzle",
-                "description" : "HTML5 game",
-                "url" : "https://charlounicolas.tech/projects/blockpuzzle/",
-                "image" : "blockpuzzle.png"
-
-            },
-             {
-                "title" : "Connect 4",
-                "description" : "HTML5 game",
-                "url" : "https://connectfour2020.onrender.com/",
-                "image" : "connect4.png"
+                "title" : "OhDio Flipbook Ad",
+                "type" : "mobile",
+                "description" : "Mobile Ad Banner",
+                "url" : "ohdio_jeunesse_flipbook/index.html",
+                "image" : "flipbook.jpg"
 
             },
             {
-                "title" : "Solitaire",
-                "description" : "HTML5 game",
-                "url" : "https://charlounicolas.tech/projects/solitaire/",
-                "image" : "solitaire.jpg"
+                "title" : "Glenlivet 'The Flip' Ad",
+                "type" : "mobile",
+                "description" : "Mobile Ad Banner",
+                "url" : "glenlivet_theflip/index.html",
+                "image" : "theflip.jpg"
 
             },
             {
-                "title" : "Block Puzzle",
-                "description" : "HTML5 game",
-                "url" : "https://charlounicolas.tech/projects/blockpuzzle/",
-                "image" : "blockpuzzle.png"
+                "title" : "Creative Gallery",
+                "type" : "web",
+                "description" : "Gallery website",
+                "url" : "https://gallery.nativetouch.com/",
+                "image" : "cgallery.jpg"
 
             }
-         
-
+            
+           
+           
+            
+          
         ],
         "workExperience" : [
             {
@@ -255,6 +259,7 @@
                 "name" : "GSAP",
                 "level" : "95"
             },
+           
             {
                 "name" : "JavaScript",
                 "level" : "90"
@@ -279,6 +284,10 @@
             {
                 "name" : "ThreeJS",
                 "level" : "50"
+            },
+            {
+                "name" : "Phaser",
+                "level" : "85"
             },
           
             {

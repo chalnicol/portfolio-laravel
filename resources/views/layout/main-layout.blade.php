@@ -15,8 +15,11 @@
     @vite('resources/css/app.css')
 
 </head>
-<body>
+<body >
     
+
+    @include('components.loading')
+
     @include('components.nav')
 
     <main>

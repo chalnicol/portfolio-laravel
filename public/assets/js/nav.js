@@ -19,7 +19,7 @@
 
     window.addEventListener('resize', () => {
 
-        console.log (navShown, window.innerWidth);
+        // console.log (navShown, window.innerWidth);
 
         showNav ( window.innerWidth <= 640 && navShown );
     });
@@ -27,7 +27,6 @@
     const showNav = ( show = true ) => {
         gsap.set ('#responsive-menu-container', { display : show ? 'block' : 'none' });
     };
-
 
     const initNav = () => {
 

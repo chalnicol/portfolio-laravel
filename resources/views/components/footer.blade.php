@@ -1,7 +1,8 @@
 
 
-<div id="contacts" class="bg-gray-900 py-8">
-    <div class="max-w-7xl mx-auto lg:flex px-5 gap-12" >
+<div id="contacts" class="bg-gray-900">
+
+    <div class="max-w-7xl mx-auto lg:flex px-5 pt-12 pb-20 gap-12" >
 
         <div class="w-full lg:w-1/2 text-white mb-12 lg:mb-0">
             <h1 class="text-2xl font-bold mb-2">Contacts</h1>
@@ -42,7 +43,7 @@
 
                 @foreach($data['profile']['details']['socials'] as $key => $social )
                 <div class="h-8 w-8 overflow-hidden shadow-lg z-auto">
-                    <a href="{{ $social['url'] }}">
+                    <a href="{{ $social['url'] }}" target="_blank">
                         <img class="w-full h-full" src="{{ asset('assets/images/socials/'. $social['thumbnail'] ) }}" alt="{{  $social['name']}}">
                     </a>
                 </div>
@@ -55,7 +56,7 @@
             <h1 class="text-2xl font-bold mb-2">Leave A Message</h1>
             <hr class="border-white border-b">
 
-            <form action="{{ route('send.message') }}" method="POST">
+            <form id="contactForm" action="{{ route('send.message') }}" method="POST">
 
                @csrf
                 <div class="my-2">
@@ -70,11 +71,16 @@
                     {{-- <label for="message">Message</label><br> --}}
                     <textarea name="message" id="message" class="w-full h-32 rounded my-1 p-3 text-black" placeholder="Enter message here" required></textarea>
                 </div>
-                <button type="submit" class="w-full bg-gray-500 py-3 rounded-md text-xl font-bold hover:bg-gray-400">SEND</button>
+                <button id="email-submit" type="submit" class="w-full bg-gray-500 py-3 rounded-md text-xl font-bold hover:bg-gray-400">SUBMIT</button>
             </form>
 
-            <br><br>
+            <div id="responseMessage" class="text-xs mt-3"></div>
+           
         </div>
 
+    </div>
+
+    <div class="text-center text-white text-xs py-2 bg-gray-800">
+        @ 2024 Chalnicol. Built using Laravel and Tailwind
     </div>
 </div>

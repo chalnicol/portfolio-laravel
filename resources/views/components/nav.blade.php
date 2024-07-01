@@ -22,6 +22,8 @@
                     <div><a href="#projects" class="my-link hover:text-gray-300">Project Gallery</a></div>
                     <div><a href="#skills" class="my-link hover:text-gray-300">Skills</a></div>
                     <div><a href="#experience" class="my-link hover:text-gray-300">Work Experience</a></div>
+                    <div><a href="#contacts" class="my-link hover:text-gray-300">Contacts</a></div>
+
                 </div>
             </div>
 
@@ -50,6 +52,11 @@
                     <a href="#experience" class="my-link">
                         <div class="p-3 border-b">
                             Work Experience
+                        </div>
+                    </a>
+                    <a href="#contacts" class="my-link">
+                        <div class="p-3 border-b">
+                            Contacts
                         </div>
                     </a>
                     

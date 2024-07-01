@@ -5,6 +5,7 @@
 
 @section('content')
 
+
     @include('components.about')
 
     @include('components.recentWork')
@@ -13,6 +14,9 @@
 
     @include('components.workExperience')
 
+    @include('components.modals')
+
+   
 @endsection
 
 @section('scripts')

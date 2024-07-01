@@ -24,7 +24,7 @@
 
          <div class="my-6">
             <button id="main-cta" class="text-lg md:text-xl py-3 px-6 font-bold rounded-s-full rounded-e-full bg-gray-800 text-white flex items-center mx-auto">
-                <span>VIEW MY WORK</span><span class="about-arrow ml-2 font-semibold material-symbols-outlined md:text-[1.5rem]">arrow_circle_down </span>
+                <span>VIEW MY WORK</span><span class="about-arrow ml-2 material-symbols-outlined md:text-[1.5rem]">arrow_circle_down </span>
             </button>
          </div>
     </div>

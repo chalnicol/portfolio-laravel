@@ -29,7 +29,7 @@ class MessageFromSite extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Message From Site',
+            subject: 'Message From ' . ucfirst($this->details['name']),
         );
     }
 

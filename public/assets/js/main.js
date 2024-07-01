@@ -11,8 +11,7 @@
         _projectsInited = false;
 
 
-     // skills functions..
-
+    // about functions..
     const initAbout = () => {
 
         const cta = document.getElementById('main-cta');
@@ -46,12 +45,11 @@
 
         });
 
-        // gsap.to ('.about-arrow', { yPercent : '+=10', yoyo:true, repeat : -1, duration : 1, ease : 'power4.out' });
+        gsap.to ('.about-arrow', { yPercent : '+=20', yoyo:true, repeat : -1, duration : 1, ease : 'elastic.in(1, 0.8)', yoyoEase: 'elastic.out(1, 0.8)' });
 
     }
 
     // skills functions..
-
     const animateBars = ( reset = false ) => {
 
 
@@ -107,9 +105,7 @@
        
     };
 
-
     // project gallery functions..
-
     const setAutoSpin = ( spin = true,  dir = 0 ) => {
 
         clearInterval (_timer);
@@ -128,9 +124,9 @@
 
     const positionCards = ( spin = false, reverse = false ) => {
 
-        const hRad = 220, vRad = 70;
-
         const pCards = document.querySelectorAll(".project-card");
+
+        const hRad = (pCards.length*10) + 100, vRad = 70;
 
         pCards.forEach( ( pCard, o ) => {
 
@@ -149,7 +145,7 @@
             const l = 180 - 360 / pCards.length * o;
 
             let a = Math.floor(0 + Math.sin(Math.PI / 180 * l) * hRad),
-                c = Math.floor(-30 - Math.cos(Math.PI / 180 * l) * vRad);
+                c = Math.floor(-40 - Math.cos(Math.PI / 180 * l) * vRad);
 
             const d = l < 0 ? l + 1 : l,
                     s = Math.abs(l) / 180 * .3 + .7;
@@ -160,7 +156,14 @@
 
     };
 
-    const initProjectControls = () => {
+    const initProjects = () => {
+
+        document.querySelectorAll('.project-card').forEach( (el, i) => {
+            el.addEventListener('click', () => openModal (el.dataset));
+        });
+
+        document.querySelectorAll('.modal-close').forEach (el => el.addEventListener('click', closeModal ));
+        
 
         document.querySelectorAll('.controls button').forEach( (btn,i) => {
 
@@ -205,7 +208,9 @@
                 }
             });
         });
+
     }
+
 
     // work experience functions..
 
@@ -317,17 +322,129 @@
 
     }
 
-  
-    //...
-    document.addEventListener('DOMContentLoaded', () => {
+    const openModal = (data) => {
+
+
+        setAutoSpin ( false ); 
+
+        const modal = document.getElementById('modal-'+data.type);
+
+        modal.style.display = 'block';
+
+
+        const url = data.url.includes('https://') ? data.url : 'assets/projects/' + data.url;
+
+        const container = modal.querySelector('.iframe-container');
+
+
+        gsap.fromTo ( container, { scale : 0 }, { scale : 1, duration : 0.8, ease : 'elastic.out(1, 0.9)', onComplete : () => {
+
+            modal.querySelector('iframe').src = url;
+
+        }});
+
+
+
+
+    }
+
+    const closeModal = (e) => {
+
+        const modal = e.target.parentNode;
+
+
+        const iframe = modal.querySelector('iframe')
+
+        const container = modal.querySelector('.iframe-container');
+
+
+        gsap.fromTo ( container, { scale : 1 }, { scale : 0, duration : 0.8, ease : 'elastic.in(1, 0.9)', onComplete : () => {
+
+            modal.style.display = 'none';
+            
+            if ( iframe ) iframe.src = "";
+
+            if (!_spinPaused) setAutoSpin (true, _spinDirection);
+    
+
+        }});
+    }
+    
+    const initEmailForm = () => {
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+
+            event.preventDefault(); // Prevent the default form submission
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            const submitButton = document.getElementById('email-submit');
+            submitButton.disabled = true;
+            submitButton.innerText = 'Sending...';
+
+            const responseMessage = document.getElementById('responseMessage');
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                
+                if (data.success) {
+                    responseMessage.innerHTML = 'Message sent successfully!';
+                    form.reset();
+                } else {
+                    responseMessage.innerHTML = 'An error occurred. Please try again.';
+                }
+
+                responseMessage.classList.toggle('text-green-400', data.success);
+                responseMessage.classList.toggle('text-red-400', !data.success);
+
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                responseMessage.classList.toggle('text-red-400');
+                responseMessage.innerHTML = 'An error occurred. Please try again.';
+            })
+            .finally(() => {
+                // Re-enable the submit button
+                submitButton.disabled = false;
+                submitButton.innerText = 'SUBMIT';
+            });
+        });
+
+    }
+
+    const initPage = () => {
+
+        // Initialize..
 
         initAbout ();
 
         initScrollTriggers();
 
-        initProjectControls ();
+        initProjects ();
+
+        initEmailForm ();
+
+    }
+    //...
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOM loaded');  
+        gsap.to ( '.loading-progress', { left : 0, duration : 1, ease : 'power4.out', onComplete : () => {
+            gsap.to ( '#loading-screen', { yPercent : -100, duration : 0.5, ease : 'power4.out', onComplete : () => { 
+                gsap.set ('#loading-screen', { display : 'none' });
+                initPage ();
+            }});
+
+        } });
 
     });
+    
+   
 
     
 

@@ -14,9 +14,9 @@
 
                     <div class="skills-container grow bg-gray-300 border border-gray-300 relative h-6 2xl:h-7 overflow-hidden">
 
-                        <div class="skills-bar absolute h-full bg-gray-800 w-[3%]" data-perc="{{ $skill['level']}}"></div>
+                        <div class="skills-bar absolute h-full bg-gray-800 w-[3%] border-r-4 border-red-800" data-perc="{{ $skill['level']}}"></div>
 
-                        <div class="skills-perc absolute w-full h-full flex justify-end items-center pr-3 w-[3%] invisible" data-perc="{{ $skill['level']}}">
+                        <div class="skills-perc absolute h-full flex justify-end items-center pr-3 w-[3%] invisible" data-perc="{{ $skill['level']}}">
                             <span class="text-xs text-white font-bold">10%</span> 
                         </div>
 
