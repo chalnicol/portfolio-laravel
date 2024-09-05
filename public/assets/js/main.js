@@ -1,3 +1,4 @@
+
 (function () {
 
     gsap.registerPlugin(ScrollTrigger);
@@ -164,7 +165,6 @@
 
         document.querySelectorAll('.modal-close').forEach (el => el.addEventListener('click', closeModal ));
         
-
         document.querySelectorAll('.controls button').forEach( (btn,i) => {
 
             btn.addEventListener('click', (e) => {
@@ -217,7 +217,7 @@
     const showCards = ( el ) => {
 
         const line = el.querySelector('.w-hline');
-        const card = el.querySelector('.w-card');
+        const card = el.querySelector('.content');
         const circ = el.querySelector('.w-circ')
 
         const tl = gsap.timeline ();
@@ -225,32 +225,46 @@
         tl
             .add ('key1')
 
-            .fromTo (card, { scale : 0 }, { scale: 1, duration: 0.8, ease: "elastic.out(1, 0.8)" }, 'key1')
+            .set (circ, { display : 'block'}, 'key1')
 
-            .set (line, { display : 'block'}, 'key1+=0.5')
+            .fromTo (circ, {scale:0.6}, {scale:1, duration: 1, transformOrigin: '50% 50%', ease: "elastic.out(1.2, 0.5)" }, "key1")
 
-            .fromTo (line, { xPercent : 100 }, { xPercent : 0, duration:0.5, ease: "power4.out" }, 'key1+=0.5')
+            .set (line, { display : 'block'}, 'key1+=0.3')
 
-            .to (circ, { scale : 0.7, backgroundColor : '#dedede', duration: 0.5, transformOrigin: "50% 50%", yoyo: true, repeat : 1, ease: "power4.in", yoyoEase : 'elastic.out(1.1, 0.5)' }, 'key1+=0.5');
+            .fromTo (line, { scaleX : 0 }, { scaleX : 1, duration:0.3, ease: "power4.out", transformOrigin : '0 50%' }, 'key1+=0.3')
+
+            .fromTo (card, { scale : 0 }, { scale: 1, duration: 0.8, ease: "elastic.out(1, 0.8)" }, 'key1+=0.3')
+
 
     }
 
     const hideCards = ( el ) => {
 
         const line = el.querySelector('.w-hline');
-        const card = el.querySelector('.w-card');
+
+        const card = el.querySelector('.content');
+
+        const circ = el.querySelector('.w-circ');
+
 
         const tl = gsap.timeline ();
 
         tl
             .add ('key1')
 
-            .fromTo (line, { xPercent : 0 }, { xPercent : 100, duration:0.3, ease: "power4.out" }, 'key1')
-
             .fromTo (card, { scale : 1 }, { scale: 0, duration:0.5, ease: "elastic.in(1, 0.8)" }, 'key1')
 
-            .set (line, { display : 'none'}, 'key1+=0.3');
+            .fromTo (line, { scaleX : 1 }, { scaleX : 0, duration:0.3, ease: "power4.out", transformOrigin : '0%50%' }, 'key1+=0.3')
 
+            .set (line, { display : 'none'}, 'key1+=0.6')
+
+            .fromTo (circ, {scale:1}, {scale: 0.6, duration: 0.8, transformOrigin: '50% 50%', ease: "elastic.in(1.2, 0.5)" }, "key1")
+
+            .set (circ, { display : 'none'}, 'key1+=0.8')
+
+           
+
+            
 
     };
     
@@ -318,9 +332,38 @@
                 if ( !_spinPaused ) setAutoSpin ( false );
             }
         });
-       
 
+      
+
+        // var tl = gsap.timeline({
+        //     paused : true,
+        //     defaults : {
+        //         ease : 'power1.out'
+        //     },
+        //     delay : 0.5,
+        // });
+
+        // tl
+        //     .addLabel ('open')
+        //     .to ( '#skills', { top : "-=200", duration : 0.3 }, 'open')
+        //     .to ( '#experience', { top : "+=200", duration : 0.3 }, 'open')
+        //     .from ( '#cv-content', { xPercent : "-200", duration : 0.8 }, 'open')
+        //     .from ( '#cv-img', { xPercent : "200", duration : 0.8 }, 'open');
+
+        // ScrollTrigger.create ({
+        //     trigger : '#cv',
+        //     start : 'top center',
+        //     end : 'top 60px',
+        //     // markers : true,
+        //     onEnter: () => tl.play(),
+        //     onLeave: () => tl.reverse(),
+        //     onEnterBack: () => tl.play(),
+        //     onLeaveBack: () => tl.reverse()
+
+        // })
     }
+
+
 
     const openModal = (data) => {
 
@@ -393,21 +436,21 @@
             .then(data => {
                 
                 if (data.success) {
-                    responseMessage.innerHTML = 'Message sent successfully!';
-                    form.reset();
-                } else {
-                    responseMessage.innerHTML = 'An error occurred. Please try again.';
-                }
 
-                responseMessage.classList.toggle('text-green-400', data.success);
-                responseMessage.classList.toggle('text-red-400', !data.success);
+                    form.reset();
+
+                    showResponseMsg ( 'Message sent successfully!' );
+
+                } else {
+
+                    showResponseMsg ( 'An error occurred. Please try again.', true, false );
+                }
 
 
             })
             .catch(error => {
                 console.error('Error:', error);
-                responseMessage.classList.toggle('text-red-400');
-                responseMessage.innerHTML = 'An error occurred. Please try again.';
+                showResponseMsg ( 'An error occurred. Please try again.', true, false );
             })
             .finally(() => {
                 // Re-enable the submit button
@@ -416,8 +459,37 @@
             });
         });
 
+
+        document.querySelector('#responseMessage .close-btn').addEventListener ('click', () => {
+            showResponseMsg ( '', false );
+        } );
+
+
     }
 
+    const showResponseMsg = ( msg, show = true,  success = true ) => {
+        
+        const main = document.getElementById('responseMessage');
+
+        if ( msg !== '') {
+            main.querySelector('.msg').textContent = msg;
+        }
+
+        if ( show ) {
+            main.style.display = 'block';
+            gsap.fromTo (main, { scale : 0 }, { scale : 1, duration : 0.6, ease : 'power4.out' });
+        }else {
+            gsap.to (main, { scale : 0, duration : 0.5, ease : 'power4.in', onComplete : () => {
+                main.style.display = 'none';
+            }});
+        }
+
+        main.classList.add( success ? 'bg-green-500' : 'bg-red-500');
+        
+        
+    }
+
+  
     const initPage = () => {
 
         // Initialize..
@@ -433,7 +505,9 @@
     }
     //...
     document.addEventListener('DOMContentLoaded', () => {
+
         console.log('DOM loaded');  
+
         gsap.to ( '.loading-progress', { left : 0, duration : 1, ease : 'power4.out', onComplete : () => {
             gsap.to ( '#loading-screen', { yPercent : -100, duration : 0.5, ease : 'power4.out', onComplete : () => { 
                 gsap.set ('#loading-screen', { display : 'none' });
@@ -444,6 +518,18 @@
 
     });
     
+    window.addEventListener('resize', function(event) {
+
+        // calculateContainerHeight ();
+
+        // console.log('Window resized to: ' + window.innerWidth + 'x' + window.innerHeight);
+
+        // document.querySelector('#experience').style.top = ( window.innerHeight - 64 ) + 'px';
+
+        // document.querySelector('#cv').style.top = ( window.innerHeight - 264 ) + 'px';
+
+
+    });
    
 
     

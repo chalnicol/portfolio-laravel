@@ -56,6 +56,13 @@
             <h1 class="text-2xl font-bold mb-2">Leave A Message</h1>
             <hr class="border-white border-b">
 
+            <div id="responseMessage" class="mt-3 rounded py-1 px-3 select-none hidden">
+                <div class="flex justify-between text-sm">
+                    <span class="msg">This is the message</span>
+                    <span class="close-btn cursor-pointer px-1">&times;</span>
+                </div>
+            </div>
+
             <form id="contactForm" action="{{ route('send.message') }}" method="POST">
 
                @csrf
@@ -74,7 +81,7 @@
                 <button id="email-submit" type="submit" class="w-full bg-gray-500 py-3 rounded-md text-xl font-bold hover:bg-gray-400">SUBMIT</button>
             </form>
 
-            <div id="responseMessage" class="text-xs mt-3"></div>
+           
            
         </div>
 

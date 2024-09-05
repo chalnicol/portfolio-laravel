@@ -64,10 +64,10 @@ Route::get('/clear-config-cache', function() {
 
 Route::get('/clear-view-cache', function() {
     Artisan::call('view:cache');
-    return 'Configuration cache cleared';
+    return 'View cache cleared';
 });
 
 Route::get('/clear-route-cache', function() {
     Artisan::call('route:cache');
-    return 'Configuration cache cleared';
+    return 'Route cache cleared';
 });

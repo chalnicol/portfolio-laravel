@@ -1,11 +1,11 @@
 
 <div id="skills" class="bg-white md:px-0 px-3 pb-[50px] w-full min-h-[calc(100vh-4rem)] flex justify-center items-center">
 
-    <div class="w-11/12 max-w-4xl mx-auto">
+    <div class="w-11/12 max-w-4xl mx-auto pointer-none">
 
         <h1 class="text-4xl py-6 text-center font-bold">Skills</h1>
 
-        <div class="w-full grid md:grid-cols-2 gap-x-10 gap-y-2 mt-2">
+        <div class="w-full grid md:grid-cols-2 gap-x-10 gap-y-2 mt-2 pointer-none">
 
             @foreach ($data['profile']['skills'] as $skill)
                 <div class="flex items-center">

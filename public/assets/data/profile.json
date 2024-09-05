@@ -127,87 +127,13 @@
         ],
         "workExperience" : [
             {
-                "company" : "Native Touch / Candy Banners",
-                "start" : "June 2021",
-                "end" : "September 2023",
-                "position" : "Creative Production Specialist",
-                "jobDescription" :[
-                    "Assist or take lead in the development and implementation of creative ad solutions.", 
-                    "Build animated and interactive HTML5 ads using assets provided from our creative team.", 
-                    "Adhere to brand guidelines when building interactive ads.", "Work with online HTML5 mobile ad builders, JavaScript libraries and APIs to build mobile ads.", 
-                    "Research and ideate new ways to enhance the mobile advertising experience by leveraging various JavaScript libraries.", 
-                    "Collaborate with other developers, designers, and cross-functional team members.", "Interact with Project Managers and Account Managers."]
-            },
-            {
-                "company" : "",
-                "start" : "September 2015",
-                "end" : "June 2021",
-                "position" : "Freelance PHP/HTML5 Developer",
-                "jobDescription" :[
-                    "Handles custom development/programming tasks that requires JS/PHP scripting." 
-                ]
-            },
-            {
-                "company" : "StrikeVideo",
-                "start" : "May 2014",
-                "end" : "September 2015",
-                "position" : "Quality Assurance Specialist",
-                "jobDescription" :[
-                    "QA’d all ad units created by StrikeVideo, mostly interstitial video.", 
-                    "Made sure all ad units have been tested, all requirements met to their respected live environments."
-                ]
-            },
-            {
-                "company" : "StrikeVideo",
-                "start" : "December 2012",
-                "end" : "May 2014",
-                "position" : "Ad Operations Trafficker",
-                "jobDescription" :[
-                    "Pulls availability forecast.", 
-                    "Traffics ads in Appnexus, Rubicon and AdWords; familiar with 3rd party vendors such as DFA, Mediamind, FlashTalking and Pointroll.", 
-                    "QAs creative tags before setting them live.", 
-                    "Works with Account Management in applying optimizations to live campaigns to ensure full delivery.", 
-                    "Troubleshoots site issues and works with Tech Support to resolve the issue."
-                ]
-            },
-            {
-                "company" : "Smart Rover",
-                "start" : "March 2012",
-                "end" : "December 2012",
-                "position" : "Flash Game Developer",
-                "jobDescription" :[
-                    "Handles custom development/programming tasks that requires Flash scripting." 
-                ]
-            },
-            {
                 "company" : "Wideout Technology",
-                "start" : "March 2012",
-                "end" : "December 2012",
-                "position" : "Technical Expert",
+                "start" : "December 2007",
+                "end" : "December 2008",
+                "position" : "Junior  Rich Media Developer",
                 "jobDescription" :[
-                    "Handles rich media escalations and provide solutions in the earliest time possible.", 
-                    "Handles testing of new rich media products before they are publicly released to production.", 
-                    "Develops software system using Google technologies that improves/solves production issues."
-                ]
-            },
-            {
-                "company" : "Wideout Technology",
-                "start" : "March 2010",
-                "end" : "April 2011",
-                "position" : "Rich Media Specialist",
-                "jobDescription" :[
-                    "Handles campaigns from Start to finish (From Development phase up to Client Approval).", 
-                    "Manages Rich Media Campaigns and Technical Requests assigned to the team.", "Communicates with Campaign Managers, Creative Technical Account Managers with regards to campaign details, escalation, and reporting of bugs found on development."
-                ]
-            },
-            {
-                "company" : "Wideout Technology",
-                "start" : "December 2009",
-                "end" : "March 2010",
-                "position" : "Rich Media Quality Assurance Specialist",
-                "jobDescription" :[
-                    "Communicates with the Production Team Lead, QA Lead, and Production Services regarding Rich Media campaigns, issues, and documentation of campaigns.", 
-                    "Checks and tests various types of ads with different levels of complexity according to site and client specifications."
+                    "Converted client-built Flash advertisements to production standards, requiring solid ability to read and comprehend 3rd-party code while adhering to strict best practices. Modified client code to utilize in-house video player and track user interaction.", 
+                    "Handled Custom development tasks that requires Web services, scripts and 3rd party APIs.", "Trains newly hired developers in the Production floor."
                 ]
             },
             {
@@ -224,15 +150,89 @@
             },
             {
                 "company" : "Wideout Technology",
-                "start" : "December 2007",
-                "end" : "December 2008",
-                "position" : "Junior  Rich Media Developer",
+                "start" : "December 2009",
+                "end" : "March 2010",
+                "position" : "Rich Media Quality Assurance Specialist",
                 "jobDescription" :[
-                    "Converted client-built Flash advertisements to production standards, requiring solid ability to read and comprehend 3rd-party code while adhering to strict best practices. Modified client code to utilize in-house video player and track user interaction.", 
-                    "Handled Custom development tasks that requires Web services, scripts and 3rd party APIs.", "Trains newly hired developers in the Production floor."
+                    "Communicates with the Production Team Lead, QA Lead, and Production Services regarding Rich Media campaigns, issues, and documentation of campaigns.", 
+                    "Checks and tests various types of ads with different levels of complexity according to site and client specifications."
                 ]
+            },
+            {
+                "company" : "Wideout Technology",
+                "start" : "March 2010",
+                "end" : "April 2011",
+                "position" : "Rich Media Specialist",
+                "jobDescription" :[
+                    "Handles campaigns from Start to finish (From Development phase up to Client Approval).", 
+                    "Manages Rich Media Campaigns and Technical Requests assigned to the team.", "Communicates with Campaign Managers, Creative Technical Account Managers with regards to campaign details, escalation, and reporting of bugs found on development."
+                ]
+            },
+            {
+                "company" : "Wideout Technology",
+                "start" : "March 2012",
+                "end" : "December 2012",
+                "position" : "Technical Expert",
+                "jobDescription" :[
+                    "Handles rich media escalations and provide solutions in the earliest time possible.", 
+                    "Handles testing of new rich media products before they are publicly released to production.", 
+                    "Develops software system using Google technologies that improves/solves production issues."
+                ]
+            },
+            {
+                "company" : "Smart Rover",
+                "start" : "March 2012",
+                "end" : "December 2012",
+                "position" : "Flash Game Developer",
+                "jobDescription" :[
+                    "Handles custom development/programming tasks that requires Flash scripting." 
+                ]
+            },
+            {
+                "company" : "StrikeVideo",
+                "start" : "December 2012",
+                "end" : "May 2014",
+                "position" : "Ad Operations Trafficker",
+                "jobDescription" :[
+                    "Pulls availability forecast.", 
+                    "Traffics ads in Appnexus, Rubicon and AdWords; familiar with 3rd party vendors such as DFA, Mediamind, FlashTalking and Pointroll.", 
+                    "QAs creative tags before setting them live.", 
+                    "Works with Account Management in applying optimizations to live campaigns to ensure full delivery.", 
+                    "Troubleshoots site issues and works with Tech Support to resolve the issue."
+                ]
+            },
+            {
+                "company" : "StrikeVideo",
+                "start" : "May 2014",
+                "end" : "September 2015",
+                "position" : "Quality Assurance Specialist",
+                "jobDescription" :[
+                    "QA’d all ad units created by StrikeVideo, mostly interstitial video.", 
+                    "Made sure all ad units have been tested, all requirements met to their respected live environments."
+                ]
+            },
+            {
+                "company" : "",
+                "start" : "September 2015",
+                "end" : "June 2021",
+                "position" : "Freelance PHP/HTML5 Developer",
+                "jobDescription" :[
+                    "Handles custom development/programming tasks that requires JS/PHP scripting." 
+                ]
+            },
+            {
+                "company" : "Native Touch / Candy Banners",
+                "start" : "June 2021",
+                "end" : "September 2023",
+                "position" : "Creative Production Specialist",
+                "jobDescription" :[
+                    "Assist or take lead in the development and implementation of creative ad solutions.", 
+                    "Build animated and interactive HTML5 ads using assets provided from our creative team.", 
+                    "Adhere to brand guidelines when building interactive ads.", "Work with online HTML5 mobile ad builders, JavaScript libraries and APIs to build mobile ads.", 
+                    "Research and ideate new ways to enhance the mobile advertising experience by leveraging various JavaScript libraries.", 
+                    "Collaborate with other developers, designers, and cross-functional team members.", "Interact with Project Managers and Account Managers."]
             }
-            
+           
         ],
         "skills" : [
             {

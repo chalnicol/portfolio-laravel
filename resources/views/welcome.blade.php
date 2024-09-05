@@ -5,16 +5,21 @@
 
 @section('content')
 
+ 
 
-    @include('components.about')
+        @include('components.about')
 
-    @include('components.recentWork')
+        @include('components.recentWork')
 
-    @include('components.skills')
+        @include('components.skills')
 
-    @include('components.workExperience')
+        @include('components.workExperience')
 
-    @include('components.modals')
+        @include('components.modals')
+      
+       
+
+    
 
    
 @endsection
